@@ -16,25 +16,43 @@ onload =() => {
     document.querySelector('bt-minus').onclick =()=>operador ('-');
     document.querySelector('bt-plus').onclick =()=>operador ('+');
 }
+
 // variaveis do armazenamento de valor
 let sValor ="0"
 let ehNovoNumero = true;
+let valorAnterior = 0;
+let operaçãoPendente = null // testar se vai funcionar?
 
 // atualizar visor
-const atualizaVisor =() =>{ 
-    let parte= sValor.split(',');
-    console.log(parte[0]);
-    console.log(parte[1]);
+const atualizaVisor =() =>{
+    let [parteInteira, parteDecimal]= sValor.split(',');
+    if (parteInteira.length > 15){
+        document.querySelector('#display').innerText ="Error"
+        return;
+    }
+    let v ='';
+    c= 0;
+    for(let i=parteInteira.length -1;i>=0;i--){
+        if (++c>3){
+            v =","+ v;
+            c = 1;
+        }
+        v= parteInteira[i] +v;
+    }
+    v = v +(parteDecimal?','+ parteDecimal.substring(0,15) :'');
     document.querySelector('#display').innerText =sValor;
     };
+
     // clique do botao de dígito
     const digito= (n) =>{
         if (ehNovoNumero) {
-            sValor=''+n;
+            sValor=''+ n;
             ehNovoNumero = false;
-            }else if(sValor.index0f(',') == -1) sValor +=',';
+            } else if(sValor.index0f(',') == -1) sValor +=',';
             atualizaVisor();
-    }
+            sValor.length // testar o limite de caracteres;
+    };
+
     //uso de numeros decimais;
     const virgula = () => {
         if (ehNovoNumero) {
@@ -42,11 +60,40 @@ const atualizaVisor =() =>{
             ehNovoNumero = false;
             }else if(sValor.index0f(',') == -1) sValor +=',';
             atualizaVisor();
-        }
+        };
 
     //ao clicar no botão C(ever clear)
     const limpa= () => {
         ehNovoNumero= true;
-            sValor='0';
-            atualizaVisor();
+        valorAnterior = 0;
+        sValor='0';
+        operaçãoPendente =null;
+        atualizaVisor();
         }
+
+        const valorAtual =() => parseFloat(sValor.replace(',' ,'.'))
+       
+        const operador =(op) => {
+            calcula();
+            valorAnterior = valorAtual();
+            operaçãoPendente = op;
+            ehNovoNumero = true
+            //calcular nova operação? testar
+        }
+
+        const calcula =() => {
+          if(operaçãoPendente!=null){  
+          let resultado;
+           switch(operaçãoPendente) {
+           case '+': resultado =valorAnterior + valorAtual(); break;
+           case '-': resultado =valorAnterior - valorAtual(); break;
+           case '*': resultado =valorAnterior * valorAtual(); break;
+           case '/': resultado =valorAnterior / valorAtual(); break;
+           }
+           sValor= resultado.toString().replace('.',',');
+          ehNovoNumero =true
+          operaçãoPendente= null;
+          valorAnterior = 0;
+        atualizaVisor();
+          }
+    };
