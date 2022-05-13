@@ -4,99 +4,192 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link><link>
-    <title>Calculadora</title>
-    <style>
-      *{
-        margin: 0;
-        padding:0;
-      }
-      .fundo{
-      background-image: linear-gradient(45deg,black,aquamarine);
-      height: 100vh;
-      color:white;
-      font-family:Arial, Helvetica, sans-serif;
-      text-align: center;
-      }
-      .calculadora{
-        position: absolute;
-        background-color: rgba(36, 9, 61,0.6);
-        top:50%;
-        left:50%;
-        transform: translate(-50%,-50%);
-        border-radius:15px;
-        padding:15px;
-      }
-      .botao{
-        width: 50px;
-        height: 50px;
-        font-size:25px;
-        cursor:pointer ;
-        margin: 3px;
-        background-color:pink;
-        border:none;
-        color:white
-      }
-      .botao:hover{
-        background-color: black;
-      }
-      #display{
-       width: 210px;
-       height: 40px;
-       margin: 5px ;
-       background-color: white;
-       font: size 25px;
-       text-align: right;
-       fill: 5px;
-       color:black;
-      }
 
-    </style>
-</head>
-<body>
-    <div class="fundo">
-    <h1>Exercios II semana CTD </h1>
-    <div class= "Calculadora">
+    <link rel="stylesheet" href="./stylecalc2.css"/>
+    <script src="calculadora.js"></script>
+
+    </head>
+    <body>
+      <div class="container">
         <h1>Calculadora</h1>
-        <p id="display"></p>
-<table>
-    <tr>
-      <td><button class="botao" onclick="clean()">C</button> </td>
-      <td><button class="botao" onclick="back()">></button> </td>
-      <td><button class="botao" onclick="insert('/')">/</button> </td>
-      <td><button class="botao"onclick="insert('*')"> X </button> </td>
-    </tr>
-    <tr>
-        <td><button class="botao onclick="insert('7')">7</button> </td>
-        <td><button class="botao onclick="insert('8')">8</button> </td>
-        <td><button class="botao onclick="insert('9')">9</button> </td>
-        <td><button class="botao onclick="insert('-')"> - </button> </td>
-      </tr>
-      <tr>
-        <td><button class="botao onclick="insert('4')">4</button> </td>
-        <td><button class="botao onclick="insert('5')">5</button> </td>
-        <td><button class="botao onclick="insert('6')">6</button> </td>
-        <td><button class="botao onclick="insert('+')"> + </button> </td>
-      </tr>
-      <tr>
-        <td><button class="botao onclick="insert('1')">1</button> </td>
-        <td><button class="botao onclick="insert('2')">2</button> </td>
-        <td><button class="botao onclick="insert('3')">3</button> </td>
-        <td rowspan="2"><button class="botao" style="height: 106px";"onclick = calcular()"> = </button> </td>
-      </tr>
-      <tr>
-        <td colspan="2"><button class="botao" style="width: 106px";>0</button> </td>
-        <td><button class="botao"> . </div></button> </td>
-          </tr>
-</table>
-    </div>
-    </body></script>
-    <function= insert ()
-    { 
-
-    }
-    </function>
+      <div id="calculadora" class="card">
+        <div class="card-header"></div>
+        <p id="display" class="m-1">0</p>
+      </div>
+        <div class ="card-body">
+        <div class="row">
+        <div class="col">
+          <button
+           id="btn -7"
+           type="button"
+        class="=btn btn-light btn-block button-text"
+        >
+        7
+      </button>
+        </div>
     
-    <script> 
+        <div class="col">
+          <button 
+          id="btn -8"
+          type="button"
+          class="=btn btn-light btn-block button-text"
+          >
+          8
+        </button>
+        </div>
+
+        <div class="col">
+        <button
+         id="btn -9"
+         type="button" 
+         class="=btn btn-light btn-block button-text"
+         >
+         9
+        </button>
+      </div>
+  
+        <div class="col">
+        <button
+         id="btn - divide"
+         type="button"
+         class="=btn btn-warning btn-block button-text"
+         >
+        <i class="fa fa-divide"></i>
+        </button>
+      </div>
+     
+          <div class="col">
+          <button
+          id="btn-4"
+          type="button"
+          class="=btn btn-light btn-block button-text"
+          >
+          4
+        </button>
+        </div>
+        
+            <div class="col"> 
+            <button
+             id="btn -5"
+             type="button"
+             class="=btn btn-light btn-block button-text"
+             >
+             5
+            </button>
+          </div>
+         
+              <div class="col">
+          <button
+           id="btn -6"
+           type="button"
+           class="=btn btn-light btn-block button-text"
+           >
+           6
+          </button>
+        </div>
+        <div class="col">
+          <button
+           id="btn-times "
+           type="button"
+           class="=btn btn-warning btn-block button-text"
+           >
+          <i class="fa fa-times"></i>
+          </button>
+        </div>
+
+            <div class="col">
+              <button
+              id="btn -1"
+              type="button"
+              class="=btn btn-light btn-block button-text"
+              >
+              1
+            </button>
+            </div>
+          
+              <div class="col">
+               <button
+                id="btn -2"
+                type="button"
+                 class="=btn btn-light btn-block button-text"
+                 >
+                 2
+                </button>
+              </div>
+            
+                <div class="col">
+               <button
+                id="btn -3"
+                type="button"
+                class="=btn btn-licht btn-block button-text"
+                >
+                3
+              </button>
+              </div>
+
+              <div class="col">
+                <button
+                 id="btn - minus"
+                 type="button"
+                 class="=btn btn-warning btn-block button-text"
+                 >
+                <i class="fa fa-minus"></i>
+                </button>
+              </div>
+
+                <div class="col">
+               <button
+                id="btn -0"
+                type="button"
+                class="=btn btn-light btn-block button-text"
+                >
+                0
+              </button>
+                </div>
+
+                <div class="col">
+                  <button
+                   id="btn -conna"
+                   type="button"
+                   class="=btn btn-light btn-block button-text"
+                   >
+                   ,
+                 </button>
+                   </div>
+                  
+           <div class="col">
+            <button
+            id="btn -plus"
+            type="button"
+            class="=btn btn-light btn-block button-text"
+                   >
+                   <i class="fa fa-plus"></i>  
+            </button> 
+            </div>
+
+        </div> <div class="row">
+        <div class="col">
+          <button
+           id="btn -AC"
+           type="button"
+           class="=btn btn-light btn-block button-text"
+           >
+           AC
+         </button>
+           </div>
+
+           <div class="col">
+             <button
+              id="btn -equals"
+              type="button"
+              class="=btn btn-light btn-block button-text"
+              >
+              <i class="fa fa-equals"></i>
+            </button>
+                      </div>
+              </div></div>
+    </body>
+    <title>Calculadora</title>
+    
 <footer>@Criado por: Flavia P.Fonseca </footer>
 </html>
