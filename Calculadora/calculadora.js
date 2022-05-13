@@ -18,10 +18,10 @@ onload =() => {
 }
 
 // variaveis do armazenamento de valor
-let sValor ="0"
+let sValor ="0";
 let ehNovoNumero = true;
 let valorAnterior = 0;
-let operaçãoPendente = null // testar se vai funcionar?
+let operaçãoPendente = null; 
 
 // atualizar visor
 const atualizaVisor =() =>{
@@ -43,14 +43,14 @@ const atualizaVisor =() =>{
     document.querySelector('#display').innerText =sValor;
     };
 
-    // clique do botao de dígito
+    
     const digito= (n) =>{
         if (ehNovoNumero) {
             sValor=''+ n;
             ehNovoNumero = false;
             } else if(sValor.index0f(',') == -1) sValor +=',';
             atualizaVisor();
-            sValor.length // testar o limite de caracteres;
+            sValor.length;
     };
 
     //uso de numeros decimais;
@@ -77,9 +77,8 @@ const atualizaVisor =() =>{
             calcula();
             valorAnterior = valorAtual();
             operaçãoPendente = op;
-            ehNovoNumero = true
-            //calcular nova operação? testar
-        }
+            ehNovoNumero = true;
+             }
 
         const calcula =() => {
           if(operaçãoPendente!=null){  
@@ -91,7 +90,7 @@ const atualizaVisor =() =>{
            case '/': resultado =valorAnterior / valorAtual(); break;
            }
            sValor= resultado.toString().replace('.',',');
-          ehNovoNumero =true
+          ehNovoNumero =true;
           operaçãoPendente= null;
           valorAnterior = 0;
         atualizaVisor();
