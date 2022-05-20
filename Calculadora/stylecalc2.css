@@ -1,4 +1,43 @@
-     
+body {
+  background-color: rgb(174, 174, 221);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  background-color: fuchsia;
+  min-width: fit-content;
+  height: 100%;
+  padding: 1.75rem;
+}
+
+#display {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.5);
+  line-height: 2rem;
+  padding: 1.25rem;
+  border-radius: 15px;
+  color: #fff;
+  justify-content: flex-end;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  margin-bottom: 4px;
+  width: 4rem;
+  height: 4rem;
+  border: 2px solid #fff;
+  border-radius: 15px;
+}     
+
       #calculadora.button-text {
     font-family:Arial, Helvetica, sans-serif;
       text-align: center;
@@ -20,21 +59,7 @@
         background-color:pink;
        
       }
-         #calculadora.display{
-       width: 210px;
-       height: 40px;
-       margin: 5px ;
-       background-color: white;
-       font-size:30pt;
-       font-weight: bold;
-       text-align: right;
-       fill: 5px;
-       color:black;
-      }
-#calculadora.card- {
- background-color: green;
-}
-
+ 
 #calculadora card-body {
 
 }
