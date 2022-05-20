@@ -1,4 +1,4 @@
-onload =() => {onload = () => {
+onload =() => {
   document.querySelector('#btn-0').onclick = () => digito(0)
   document.querySelector('#btn-1').onclick = () => digito(1)
   document.querySelector('#btn-2').onclick = () => digito(2)
