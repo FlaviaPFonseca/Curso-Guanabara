@@ -15,6 +15,6 @@ window.alert('[ERROR] Veriique os dados e tente novamente!')
       gênero=  'Mulher'
   }
 res.style.textAlign ='center'
-res.innerHTML ='Detectamos'${gênero}'com'${idade}'anos';
+res.innerHTML =`Detectemos ${genero} com ${idade} anos`;
 }
 }
