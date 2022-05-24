@@ -1,0 +1,119 @@
+var $lista= document.querySelector('ul')
+var $produto= document.querySelector('#protuto')
+var $botao= document.querySelector('#btn')
+
+$botao.addEventListener('click',addProduto)
+
+function addProduto(){
+    var item ='<li>'+ $produto.value +'</li>'
+   $lista.innerHTML += item
+   $produto.value = ''
+   $produto.focus()
+}
+produto.addEventListener ('keyup',function(e)
+{    if(e.keyCode === 13)
+            addProduto()
+            )
+}
+
+/* FORMATAÇÃO  DA IMAGEM COM LEGENDA*/
+figure.foto-legenda{
+    position: relative;
+    border: 8px solid white;
+    box-shadow: 1px 1px 4px black;
+}
+figure.foto-legenda img {
+width:100%;
+height:100%;
+}
+figure.foto-legenda figcaption {
+    position: absolute;
+    top:0px;
+    background-color: rgba(0,0, 0,0.4 );
+    color:beige;
+    width: 100%;
+    height:100%;
+    padding: 10px;
+    box-sizing:border-box;
+    transition: opacity 1s
+    }
+figure.foto-legenda figcaption{
+        opacity: 1;
+    }
+/* FORMATAÇÃO  DA PAGINA EM DUAS COLUNAS */
+.flex-container{
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.flex-item {
+flex: 1 1 200px;
+order: 2;
+}
+/*Formatação do Menu*/
+.nav id #menu {
+    display: block;
+}
+.nav#topmenu ul{ 
+list-style: none;
+text-transform: uppercase;
+position: absolute;
+top:0px;
+left:100px
+}
+.nav#menu li{
+display: inline-block;
+background-color:grey;
+padding: 10px;
+margin: 5px;
+transition: background-color 1s;
+}
+.nav#menu li:hover {
+ background-color: #606060;   
+ }
+ nav#topmenu a{
+     color: #000;
+     text-decoration: none;
+ }
+ /*Formatação da Página*/
+body {
+   background-color: #dddddd; 
+   color: rgba(0,0, 0,0.1);
+ }
+ div#inerface {
+     width: 900px;
+     background-color: aqua;
+     margin: 10px auto 10px auto;
+     box-shadow: 0px 0px 10px gray;
+     padding: 10px 10px 10px 10px;
+ };
+    { 
+     text-align:justify
+     text-ident: 50px
+}
+header#cabecalho img#icone {
+    position:absolute;
+    left: 780px;
+    top: 70px;
+};
+header#cabecalho {
+border-bottom: 1px #606060 solid;
+height: 150px;
+background:url("")no-repeat 0px 100px ;
+}
+header#cabecalho h1 {
+    font-family: FonteLogo;
+    font-size: 300px;
+    color: #606060;
+    text-shadow: 1px rgb(0, 0, 0,.6);
+}
+footer{
+    background-color: black;
+    padding: 30px;
+    color: white
+}
+#rodape {
+    position: relative;
+    bottom: 12px;
+}
